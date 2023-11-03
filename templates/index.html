@@ -5,14 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
 </head>
 <body>
 
 <!-- Introduction Section -->
 <section id="introduction">
-    <h1>Welcome to My Portfolio</h1>
-    <img src="{{ url_for('static', filename='my_picture.png') }}" alt="My Picture" class="profile-pic">
-    <p>Hi, I'm Siva Chandan C, a Data Engineer...</p>
+    <div class="intro-container">
+        <img src="{{ url_for('static', filename='my_picture.png') }}" alt="My Picture" class="profile-pic">
+        <div class="intro-text">
+            <h1>Siva Chandan C</h1>
+            <p class="title">Data Engineer</p>
+        </div>
+    </div>
+    <p>Hi, I'm Siva Chandan C, a passionate Data Engineer...</p>
+    <div class="us-indicator">
+        <i class="fas fa-flag-usa"></i>
+        <span>Working from the US</span>
+    </div>
 </section>
 
 <!-- Experience Section -->

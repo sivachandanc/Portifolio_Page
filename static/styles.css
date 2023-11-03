@@ -16,10 +16,28 @@ section {
     scroll-snap-align: start; /* Snap to the start of the section when scrolling */
 }
 
+
 #introduction {
-    background: lightblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    min-height: 100vh; /* Use viewport height to ensure it takes the full height of the screen */
+    background-image: url('/static/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
 }
+.intro-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
 
 #experience {
     background: lightgreen;
@@ -35,13 +53,66 @@ img {
 }
 
 .profile-pic {
-    width: 200px; /* You can set this to the desired width */
-    height: auto; /* This will maintain the aspect ratio of the image */
-    border-radius: 50%; /* This will make the picture round */
-    border: 3px solid #fff; /* Optional: adds a border around the picture */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Optional: adds a shadow for a "lifted" effect */
-    margin-top: 20px; /* Adjust spacing to your liking */
-    display: block; /* Change to block to center the image if needed */
-    margin-left: auto; /* Center the image horizontally */
-    margin-right: auto; /* Center the image horizontally */
+    width: 200px; /* Adjust the width as desired */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 50%; /* Makes the image round */
+    border: 3px solid #fff; /* Optional: adds a border around the image */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Optional: adds a shadow */
+    margin-top: 20px; /* Adjust top spacing */
+    margin-bottom: 20px; /* Adjust bottom spacing */
+    display: block; /* Changes the display to block */
+    margin-left: auto; /* Centers the image horizontally */
+    margin-right: auto; /* Centers the image horizontally */
 }
+.intro-text h1 {
+    font-size: 2rem;
+    margin: 0; 
+}
+
+.intro-text .title {
+    font-size: 1rem; /* Keep the title smaller than the name */
+    color: #666;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-30px);
+    }
+    60% {
+      transform: translateY(-15px);
+    }
+  }
+
+.us-indicator {
+    position: absolute; /* Absolute positioning */
+    top: 50%; /* Align vertically */
+    left: 0; /* Align to the left edge */
+    transform: translateY(-50%); /* Center it vertically with respect to the section */
+    width: 200px; /* Width of the indicator box */
+    background-color: #f0f0f0; /* Background of the indicator box */
+    padding: 10px; /* Padding inside the box */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Optional: adds a shadow for depth */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Center items horizontally */
+    text-align: center; /* Center the text */
+    border-radius: 0 10px 10px 0; /* Rounded corners on the right side */
+    font-size: 0.9rem; /* Font size for the text */
+    color: #333; /* Text color */
+    gap: 10px; /* Space between flag icon and text */
+}
+
+.us-indicator i {
+    color: #0047AB; /* Flag color - dark blue */
+    animation: bounce 2s infinite;
+    z-index: 10;
+}
+
+/* Adjust the size of the FontAwesome icon if needed */
+.us-indicator .fas {
+    font-size: 2rem;
+}
+  
