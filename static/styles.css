@@ -1,0 +1,47 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%; /* ensures the body takes the full width */
+    height: 100%; /* ensures the body takes the full height */
+    scroll-behavior: smooth;
+    overflow-y: scroll; /* Allows vertical scrolling */
+}
+
+body {
+    scroll-snap-type: y mandatory; /* Enable scroll snapping */
+}
+section {
+    padding: 50px;
+    min-height: 100vh; /* Ensure each section takes at least the height of the viewport */
+    scroll-snap-align: start; /* Snap to the start of the section when scrolling */
+}
+
+#introduction {
+    background: lightblue;
+    text-align: center;
+}
+
+#experience {
+    background: lightgreen;
+}
+
+#portfolio {
+    background: lightcoral;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.profile-pic {
+    width: 200px; /* You can set this to the desired width */
+    height: auto; /* This will maintain the aspect ratio of the image */
+    border-radius: 50%; /* This will make the picture round */
+    border: 3px solid #fff; /* Optional: adds a border around the picture */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Optional: adds a shadow for a "lifted" effect */
+    margin-top: 20px; /* Adjust spacing to your liking */
+    display: block; /* Change to block to center the image if needed */
+    margin-left: auto; /* Center the image horizontally */
+    margin-right: auto; /* Center the image horizontally */
+}
