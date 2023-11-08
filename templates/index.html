@@ -23,41 +23,49 @@
         <img src="{{ url_for('static', filename='my_picture.png') }}" alt="My Picture" class="profile-pic">
         <!-- Intro Text -->
         <div class="intro-text">
-            <h1>Hi, I am Siva Chandan C</h1>
+            <div class="type-writer"><p>Hi, I am Siva Chandan C. </p></div>
             <p class="title">Data Engineer</p>
-            <button id="aboutMeButton">About Me</button>
-        </div>
-        
-        <!-- About Me Modal -->
-        <div id="aboutMeModal" class="modal">
-            <div class="modal-content">
-                <span class="close-button" id="closeAboutMe">&times;</span>
-                <div class="about-me-content">
-                    <!-- Description of your experience as a data engineer -->
-                    <h2>About Me</h2>
-                    <p>Detail your professional experience as a Data Engineer here...</p>
+            
+            <!-- Container for "About Me" button and social icons (Center-aligned) -->
+            <div class="about-me-social-container">
+                <div class="about-me-button-container">
+                    <button id="aboutMeButton">About Me</button>
                 </div>
-                <div class="contact-form">
-                    <!-- Contact form goes here -->
-                    <!-- You can use HTML form elements for the contact form -->
+                
+                <!-- Social Icons Container (Moved below the "About Me" button) -->
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/siva-chandan-chakka/" target="_blank" rel="noopener noreferrer">
+                        <img src="{{ url_for('static', filename='linkedin_icon.png') }}" alt="LinkedIn">
+                    </a>
+                    <a href="https://github.com/sivachandanc" target="_blank" rel="noopener noreferrer">
+                        <img src="{{ url_for('static', filename='github_icon.png') }}" alt="GitHub">
+                    </a>
+                    <a href="https://medium.com/@sivachandanc" target="_blank" rel="noopener noreferrer">
+                        <img src="{{ url_for('static', filename='medium_icon.png') }}" alt="Medium">
+                    </a>
                 </div>
             </div>
         </div>
-        
     </div>
-    <!-- Social Icons Container -->
-    <div class="social-icons">
-        <a href="https://www.linkedin.com/in/siva-chandan-chakka/" target="_blank" rel="noopener noreferrer">
-            <img src="{{ url_for('static', filename='linkedin_icon.png') }}" alt="LinkedIn">
-        </a>
-        <a href="https://github.com/sivachandanc" target="_blank" rel="noopener noreferrer">
-            <img src="{{ url_for('static', filename='github_icon.png') }}" alt="GitHub">
-        </a>
-        <a href="https://medium.com/@sivachandanc" target="_blank" rel="noopener noreferrer">
-            <img src="{{ url_for('static', filename='medium_icon.png') }}" alt="Medium">
-        </a>
+
+    <!-- About Me Modal -->
+    <div id="aboutMeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="closeAboutMe">&times;</span>
+            <div class="about-me-content">
+                <!-- Description of your experience as a data engineer -->
+                <h2>About Me</h2>
+                <p>Detail your professional experience as a Data Engineer here...</p>
+            </div>
+            <div class="contact-form">
+                <!-- Contact form goes here -->
+                <!-- You can use HTML form elements for the contact form -->
+            </div>
+        </div>
     </div>
 </section>
+
+
 
 <!-- Experience Section -->
 <section id="experience">

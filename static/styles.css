@@ -34,9 +34,9 @@ section {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
     gap: 30px;
 }
+
 
 
     #experience {
@@ -64,13 +64,29 @@ section {
         margin-left: auto; /* Centers the image horizontally */
         margin-right: auto; /* Centers the image horizontally */
     }
-    .intro-text h1 {
+    .type-writer{display: inline;}
+    .intro-text .type-writer p {
         font-family: 'Great Vibes', cursive;
         font-size: 2rem;
         margin: 0;
+        border-right: 2px solid;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
         color: #E0E0FF;
+        animation:
+                typing 2s steps(23),
+                cursor .4s step-end infinite alternate ;
+    }
+    /* Cursor Bliniking */
+    @keyframes cursor{
+        50% {border-color: transparent;}
     }
 
+    /* typing effect */
+    @keyframes typing{
+        from {width: 0}
+    }
     .intro-text .title {
         font-family: 'Montserrat', sans-serif;
         font-size: 1rem;
@@ -91,32 +107,34 @@ section {
     
 
     .social-icons {
-        position: absolute; /* Position the icons container absolutely to the parent */
-        top: 50%; /* Center it vertically */
-        right: 0; /* Align to the right edge */
-        transform: translateY(-50%); /* Offset by half the height to truly center it */
-        display: flex; /* Stack the children elements vertically */
-        flex-direction: column; /* Stack the icons vertically */
-        align-items: center; /* Center the icons horizontally */
-        gap: 10px; /* Space between the icons */
+        display: flex;
+        gap: 10px;
+        justify-content: center; /* Center the icons horizontally */
     }
-
+    
+    .social-icons a[href*="linkedin.com"] img {
+        width: 45px; /* Set the desired width for the LinkedIn icon */
+        height: auto;
+        transition: transform 0.3s;
+        border-radius: 50%;
+    }
     .social-icons a {
-        display: block; /* Treat each link as a block */
-        margin: 5px 20px; /* Margin for spacing around the icons, adjust the horizontal margin as needed */
+        display: block;
+        margin: 10px; /* Adjust the margin for spacing around the icons */
     }
-
+    
     .social-icons img {
         width: 35px;
         height: auto;
         transition: transform 0.3s;
         border-radius: 50%;
     }
-
+    
     .social-icons img:hover {
         transform: scale(1.2);
-        background: linear-gradient(to bottom, #c30000, #8b0000); 
+        background: linear-gradient(to bottom, #c30000, #8b0000);
     }
+    
 
 
     /* Add styles for the modal */
@@ -173,3 +191,6 @@ section {
     #aboutMeButton:hover {
         background-color: #444;
     }
+
+
+
