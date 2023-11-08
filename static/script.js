@@ -37,4 +37,19 @@ function throttle(fn, wait) {
   
   // Event listener for the scroll event with throttle
   window.addEventListener('scroll', throttle(handleScroll, 1000));
-  
+
+  // Function to open the About Me modal
+  function openAboutMeModal() {
+  document.getElementById('aboutMeModal').style.display = 'block';
+  }
+
+  // Function to close the About Me modal
+  function closeAboutMeModal() {
+  document.getElementById('aboutMeModal').style.display = 'none';
+  }
+
+  // Event listener for the "About Me" button click
+  document.getElementById('aboutMeButton').addEventListener('click', openAboutMeModal);
+
+  // Event listener for the close button in the modal
+  document.getElementById('closeAboutMe').addEventListener('click', closeAboutMeModal);
