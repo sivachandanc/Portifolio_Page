@@ -10,30 +10,27 @@ function throttle(fn, wait) {
   }
   
   // The actual scroll handling function
-  function handleScroll() {
-    let scrollPosition = window.pageYOffset;
-    let sections = document.querySelectorAll("section");
-    let scrollAmount = window.innerHeight * 0.1; // adjust as needed
-  
-    for (let i = 0; i < sections.length; i++) {
-      let section = sections[i];
-      let sectionTop = section.offsetTop;
-      let sectionHeight = section.offsetHeight;
-      let sectionBottom = sectionTop + sectionHeight;
-  
-      // Check if the section top is just at the viewport and if we are scrolling down
-      if (scrollPosition >= sectionTop - scrollAmount && scrollPosition < sectionBottom - scrollAmount) {
-        // Check if there is a next section to scroll into view
-        if (i < sections.length - 1) {
-          // Prevent default scroll
-          window.scrollTo(0, sectionTop);
-          // Smoothly scroll to the next section
-          sections[i + 1].scrollIntoView({ behavior: 'smooth' });
-          break; // Exit the loop
-        }
+  // The actual scroll handling function
+function handleScroll() {
+  let scrollPosition = window.pageYOffset;
+  let sections = document.querySelectorAll("section");
+
+  for (let i = 0; i < sections.length; i++) {
+    let section = sections[i];
+    let sectionTop = section.offsetTop;
+
+    // Check if the section top is just at the viewport and if we are scrolling down
+    if (scrollPosition >= sectionTop) {
+      // Check if there is a next section to scroll into view
+      if (i < sections.length - 1) {
+        // Smoothly scroll to the next section without any offset
+        sections[i + 1].scrollIntoView({ behavior: 'smooth', block: 'start' });
+        break; // Exit the loop
       }
     }
   }
+}
+
   
   // Event listener for the scroll event with throttle
   window.addEventListener('scroll', throttle(handleScroll, 1000));

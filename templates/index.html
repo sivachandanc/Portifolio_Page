@@ -6,16 +6,24 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kenia&family=Montserrat&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
 
+<!-- Adding a Nav Bar -->
+<div id="navbar-container">
+    {% include 'navbar.html' %}
+</div>
+
 <!-- Introduction Section -->
-<section id="introduction">
+<section id="home">
     <div class="intro-container">
         <img src="{{ url_for('static', filename='my_picture.png') }}" alt="My Picture" class="profile-pic">
         <!-- Intro Text -->
         <div class="intro-text">
-            <h1>Siva Chandan C</h1>
+            <h1>Hi, I am Siva Chandan C</h1>
             <p class="title">Data Engineer</p>
             <button id="aboutMeButton">About Me</button>
         </div>
@@ -36,10 +44,6 @@
             </div>
         </div>
         
-    </div>
-    <div class="us-indicator">
-        <i class="fas fa-flag-usa"></i>
-        <span>Working from the US</span>
     </div>
     <!-- Social Icons Container -->
     <div class="social-icons">
