@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kenia&family=Montserrat&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kenia&family=Lato&family=Montserrat&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -53,21 +53,26 @@
         </div>
     </div>
 
-    <!-- About Me Modal -->
-    <div id="aboutMeModal" class="modal">
-        <div class="modal-content">
-            <span class="close-button" id="closeAboutMe">&times;</span>
-            <div class="about-me-content">
-                <!-- Description of your experience as a data engineer -->
+    <!-- About Me Dialog with two sides -->
+    <dialog id="aboutMeDialog">
+        <div class="dialog-content">
+            <div class="dialog-left">
                 <h2>About Me</h2>
-                <p>Detail your professional experience as a Data Engineer here...</p>
+                <p>Data Engineer with more than 4 years of professional experience working on data-intensive projects. Highly skilled in creating data set processes, maintaining scalable data pipelines, building API integrations, and accelerating the performance of ETL processes both in cloud and on-premises environments.</p>
             </div>
-            <div class="contact-form">
-                <!-- Contact form goes here -->
-                <!-- You can use HTML form elements for the contact form -->
+            <div class="dialog-right">
+                <h2>Contact Me</h2>
+                <form id="contactForm">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
             </div>
         </div>
-    </div>
+        <button id="closeAboutMeButton">Close</button>
+    </dialog>
+
 </section>
 
 

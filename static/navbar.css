@@ -42,8 +42,7 @@
 }
 
 .nav-links li {
-    font-family: 'Montserrat', sans-serif; /* Use Montserrat font for list items */
-    font-weight: bold; /* Make list item text bold */
+    font-family: 'Lato', sans-serif; /* Use Montserrat font for list items */
 }
 
 /* Style for the list item links */

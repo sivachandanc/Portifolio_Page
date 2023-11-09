@@ -37,16 +37,9 @@ align-items: center;
 gap: 30px;
 }
 
-
-
-
-
-img {
+.profile-pic {
     max-width: 100%;
     height: auto;
-}
-
-.profile-pic {
     width: 400px; /* Adjust the width as desired */
     height: auto; /* Maintain the aspect ratio */
     border-radius: 50%; /* Makes the image round */
@@ -212,3 +205,92 @@ img {
 #portfolio {
     background: lightcoral;
 }
+
+/* Styles for About Me Dialog */
+#aboutMeDialog {
+    width: 80%;
+    max-width: 800px;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.dialog-content {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px; /* Adjusted for consistency */
+    overflow: hidden; /* This will ensure that child elements do not overflow the rounded corners */
+  }
+  
+  .dialog-left {
+    font-family: 'Lato', sans-serif;
+    width: 48%;
+    padding-right: 20px; /* Give some space between the text and the vertical line */
+    border-right: 2px solid #ccc; /* This adds the vertical line between the two sides */
+  }
+  
+  .dialog-right {
+    font-family: 'Lato', sans-serif;
+    width: 48%;
+    padding-left: 20px; /* Give some space between the vertical line and the form */
+  }
+
+/* Additional styles for form inside dialog */
+#contactForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#contactForm input, #contactForm textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contactForm button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #343F4F;
+    color: white;
+    cursor: pointer;
+}
+
+/* Style the close button */
+#closeAboutMeButton {
+    background: linear-gradient(90deg, #FF0000, #8B0000);
+    color: #E0E0FF;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold; /* Optionally, make the text bold */
+    border-radius: 5px; /* Optionally, round the corners a bit */
+    margin-top: 20px; /* Add some space above the button */
+    outline: none; /* Remove the outline to match the "About Me" button style */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  #closeAboutMeButton:hover {
+    background-color: #8B0000; /* Darken the button a bit when hovered */
+  }
+  
+  /* Responsive styles if needed */
+  @media (max-width: 600px) {
+    .dialog-content {
+      flex-direction: column;
+    }
+    .dialog-left, .dialog-right {
+      width: 100%;
+      border-right: none; /* Remove the border when in single column view */
+      padding-right: 0; /* Reset padding */
+      padding-left: 0; /* Reset padding */
+    }
+  
+    /* Adjust close button style for mobile as needed */
+    #closeAboutMeButton {
+      width: 100%; /* Optional: Make the button full width on mobile */
+    }
+  }
+  
