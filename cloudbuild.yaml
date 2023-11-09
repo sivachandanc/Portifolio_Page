@@ -1,4 +1,0 @@
-steps:
-- name: 'gcr.io/cloud-builders/gcloud'
-  args: ['compute', 'ssh', 'YOUR_VM_NAME', '--command', 'git -C /path/to/your/repo pull origin main', '--zone', 'YOUR_VM_ZONE']
-timeout: '120s'
