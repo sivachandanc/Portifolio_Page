@@ -5,15 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kenia&family=Lato&family=Montserrat&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
 
+<!-- Adding a Nav Bar -->
+<div id="navbar-container">
+    {% include 'navbar.html' %}
+</div>
+
 <!-- Introduction Section -->
-<section id="introduction">
-    <h1>Welcome to My Portfolio</h1>
-    <img src="{{ url_for('static', filename='my_picture.png') }}" alt="My Picture" class="profile-pic">
-    <p>Hi, I'm Siva Chandan C, a Data Engineer...</p>
+<section id="home">
+    <div class="intro-container">
+        <img src="{{ url_for('static', filename='my_picture.png') }}" alt="My Picture" class="profile-pic">
+        <!-- Intro Text -->
+        <div class="intro-text">
+            <div class="type-writer"><p>Hi, I am Siva Chandan C. </p></div>
+            <p class="title">
+                <span class="static-text">Data</span>
+                <span class="job-title-container">
+                    <span id="jobTitle">Engineer</span>
+                </span>
+            </p>
+            
+            <!-- Container for "About Me" button and social icons (Center-aligned) -->
+            <div class="about-me-social-container">
+                <div class="about-me-button-container">
+                    <button id="aboutMeButton">About Me</button>
+                </div>
+                
+                <!-- Social Icons Container (Moved below the "About Me" button) -->
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/siva-chandan-chakka/" target="_blank" rel="noopener noreferrer">
+                        <img src="{{ url_for('static', filename='linkedin_icon.png') }}" alt="LinkedIn">
+                    </a>
+                    <a href="https://github.com/sivachandanc" target="_blank" rel="noopener noreferrer">
+                        <img src="{{ url_for('static', filename='github_icon.png') }}" alt="GitHub">
+                    </a>
+                    <a href="https://medium.com/@sivachandanc" target="_blank" rel="noopener noreferrer">
+                        <img src="{{ url_for('static', filename='medium_icon.png') }}" alt="Medium">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Me Dialog with two sides -->
+    <dialog id="aboutMeDialog">
+        <div class="dialog-content">
+            <div class="dialog-left">
+                <h2>About Me</h2>
+                <p>Data Engineer with more than 4 years of professional experience working on data-intensive projects. Highly skilled in creating data set processes, maintaining scalable data pipelines, building API integrations, and accelerating the performance of ETL processes both in cloud and on-premises environments.</p>
+            </div>
+            <div class="dialog-right">
+                <h2>Contact Me</h2>
+                <form id="contactForm">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+        <button id="closeAboutMeButton">Close</button>
+    </dialog>
+
 </section>
+
+
 
 <!-- Experience Section -->
 <section id="experience">
@@ -31,5 +93,6 @@
     </div>
     <!-- Repeat for more projects -->
 </section>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

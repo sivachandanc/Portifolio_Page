@@ -1,25 +1,202 @@
 body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%; /* ensures the body takes the full width */
-    height: 100%; /* ensures the body takes the full height */
-    scroll-behavior: smooth;
-    overflow-y: scroll; /* Allows vertical scrolling */
+margin: 0;
+padding: 0;
+width: 100%;
+height: 100%;
+/* scroll-behavior: smooth; */
+overflow-y: scroll;
+padding-top: 40px;
 }
 
 body {
-    scroll-snap-type: y mandatory; /* Enable scroll snapping */
-}
-section {
-    padding: 50px;
-    min-height: 100vh; /* Ensure each section takes at least the height of the viewport */
-    scroll-snap-align: start; /* Snap to the start of the section when scrolling */
+scroll-snap-type: y mandatory;
 }
 
-#introduction {
-    background: lightblue;
-    text-align: center;
+section {
+padding: 40px 0 0 0;
+min-height: 100vh;
+scroll-snap-align: start;
+width: 100%;
 }
+
+#home {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+min-height: 100vh;
+background-color: #343F4F; /*333333 */
+/* Remove position: relative; */
+}
+
+.intro-container {
+display: flex;
+flex-direction: row;
+align-items: center;
+gap: 30px;
+}
+
+.profile-pic {
+    max-width: 100%;
+    height: auto;
+    width: 400px; /* Adjust the width as desired */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 50%; /* Makes the image round */
+    border: 3px solid #fff; /* Optional: adds a border around the image */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Optional: adds a shadow */
+    margin-top: 20px; /* Adjust top spacing */
+    margin-bottom: 20px; /* Adjust bottom spacing */
+    display: block; /* Changes the display to block */
+    margin-left: auto; /* Centers the image horizontally */
+    margin-right: auto; /* Centers the image horizontally */
+}
+.intro-text .title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: #E0E0FF;
+}
+/* 61 - 74 Setting the cycling of Job Titles */
+.intro-text  .title .static-text{
+    white-space: nowrap;
+}
+.intro-text  .title .job-title-container{
+    width: 90px; /* Set a fixed width for the container */
+    display: inline-block;
+}
+#jobTitle {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #FC6D6D ;
+    }
+
+/* 75-98 type writer Effect*/
+.intro-text .type-writer{display: inline;}
+.intro-text .type-writer p {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    margin: 0;
+    border-right: 2px solid;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #E0E0FF;
+    animation:
+            typing 2s steps(23),
+            cursor .4s step-end infinite alternate ;
+}
+/* Cursor Bliniking */
+@keyframes cursor{
+    50% {border-color: transparent;}
+}
+
+/* typing effect */
+@keyframes typing{
+    from {width: 0}
+}
+
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+    }
+    40% {
+    transform: translateY(-30px);
+    }
+    60% {
+    transform: translateY(-15px);
+    }
+}
+
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    justify-content: center; /* Center the icons horizontally */
+}
+
+.social-icons a[href*="linkedin.com"] img {
+    width: 45px; /* Set the desired width for the LinkedIn icon */
+    height: auto;
+    transition: transform 0.3s;
+    border-radius: 50%;
+}
+.social-icons a {
+    display: block;
+    margin: 10px; /* Adjust the margin for spacing around the icons */
+}
+
+.social-icons img {
+    width: 35px;
+    height: auto;
+    transition: transform 0.3s;
+    border-radius: 50%;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+    background: linear-gradient(to bottom, #c30000, #8b0000);
+}
+
+
+
+/* Add styles for the modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: #f2f2f2;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* Style the "About Me" button */
+#aboutMeButton {
+    background: linear-gradient(90deg, #FF0000, #8B0000); /* Red metallic gradient background */
+    color: #E0E0FF; /* Text color */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: relative; /* Needed for the shimmer effect */
+    overflow: hidden; /* Hide the shimmer overflow */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+#aboutMeButton:hover {
+    background: linear-gradient(90deg, #8B0000, #FF0000); /* Reversed gradient on hover */
+    transform: scale(1.05); /* Slight scale-up on hover for shimmer effect */
+}
+
+
+
+/* Add styles for the "About Me" button hover effect if needed */
+#aboutMeButton:hover {
+    background-color: #444;
+}
+
+
 
 #experience {
     background: lightgreen;
@@ -29,19 +206,91 @@ section {
     background: lightcoral;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
+/* Styles for About Me Dialog */
+#aboutMeDialog {
+    width: 80%;
+    max-width: 800px;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-.profile-pic {
-    width: 200px; /* You can set this to the desired width */
-    height: auto; /* This will maintain the aspect ratio of the image */
-    border-radius: 50%; /* This will make the picture round */
-    border: 3px solid #fff; /* Optional: adds a border around the picture */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Optional: adds a shadow for a "lifted" effect */
-    margin-top: 20px; /* Adjust spacing to your liking */
-    display: block; /* Change to block to center the image if needed */
-    margin-left: auto; /* Center the image horizontally */
-    margin-right: auto; /* Center the image horizontally */
+.dialog-content {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px; /* Adjusted for consistency */
+    overflow: hidden; /* This will ensure that child elements do not overflow the rounded corners */
+  }
+  
+  .dialog-left {
+    font-family: 'Lato', sans-serif;
+    width: 48%;
+    padding-right: 20px; /* Give some space between the text and the vertical line */
+    border-right: 2px solid #ccc; /* This adds the vertical line between the two sides */
+  }
+  
+  .dialog-right {
+    font-family: 'Lato', sans-serif;
+    width: 48%;
+    padding-left: 20px; /* Give some space between the vertical line and the form */
+  }
+
+/* Additional styles for form inside dialog */
+#contactForm {
+    display: flex;
+    flex-direction: column;
 }
+
+#contactForm input, #contactForm textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contactForm button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #343F4F;
+    color: white;
+    cursor: pointer;
+}
+
+/* Style the close button */
+#closeAboutMeButton {
+    background: linear-gradient(90deg, #FF0000, #8B0000);
+    color: #E0E0FF;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold; /* Optionally, make the text bold */
+    border-radius: 5px; /* Optionally, round the corners a bit */
+    margin-top: 20px; /* Add some space above the button */
+    outline: none; /* Remove the outline to match the "About Me" button style */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  #closeAboutMeButton:hover {
+    background-color: #8B0000; /* Darken the button a bit when hovered */
+  }
+  
+  /* Responsive styles if needed */
+  @media (max-width: 600px) {
+    .dialog-content {
+      flex-direction: column;
+    }
+    .dialog-left, .dialog-right {
+      width: 100%;
+      border-right: none; /* Remove the border when in single column view */
+      padding-right: 0; /* Reset padding */
+      padding-left: 0; /* Reset padding */
+    }
+  
+    /* Adjust close button style for mobile as needed */
+    #closeAboutMeButton {
+      width: 100%; /* Optional: Make the button full width on mobile */
+    }
+  }
+  
